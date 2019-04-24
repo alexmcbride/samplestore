@@ -59,7 +59,14 @@ namespace SampleStore.Models
         public Sample Get(string id)
         {
             var entity = GetEntity(id);
-            return CreateSample(entity);
+			if (entity != null) 
+			{
+				return CreateSample(entity);
+			}
+			else 
+			{
+				return null;
+			}
         }
 
         /// <summary>
